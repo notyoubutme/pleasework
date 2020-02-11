@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Рабочий стол</title>
+	<link rel="stylesheet" href="homepage_style.css">
+	<!-- ajax & jquery библиотеки -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="logic.js"></script>
+</head>
+<body>
+	
+
+
+	<header class="set_bar">
+		<a  class="settings" onclick="Show_settings()"><img src="img/menu.svg" alt=""></a>
+		<label onClick="logout()" class="exit">exit</label>
+		<a  class="exit">  <img src="img/logout.svg" alt=""></a>
+	</header>
+
+
+
+	<section class="nav_bar">
+		<ul>
+			<li class="nav_bar_item"><p >Відділення
+			 Повітряний транспорт</p>
+				<ul>
+                    <li class ="nav_bar_sub"><p>Пункт1</p></li>
+                    <li class ="nav_bar_sub"><p>Пункт2</p></li>
+                    <li class ="nav_bar_sub"><p>Пункт3</p></li>
+                    <li class ="nav_bar_sub"><p>Пункт4</p></li>
+                  </ul>
+			</li>
+			<li class="nav_bar_item"><p >Відділення 
+			Авіаційна електроніка</p></li>
+			<li class="nav_bar_item"><p >Відділення 
+			Компютерна 
+		та Програмна інженерія</p></li>
+			<li class="nav_bar_item"><p >Відділення 
+			Загалноосвітня підготовка</p></li>
+			<li class="nav_bar_item"><p >Відділення 
+			Повітрянній транспорт 
+		та Копютерні технології</p></li>
+		</ul>
+	</section>
+
+	
+	<section class="content"></section>
+		<form action="homepage.php" class="search" method="post">
+			<input type="text" name="search" >
+
+<div class="vertical-menu" id="vertical-menu" ></div>
+
+
+		</form>
+		
+		<div id="shadow"></div>
+	<div id="opened" class="view_data" >
+		
+	</div>
+	<div id="settings" >
+		
+	</div>
+
+	
+</body>
+</html>
