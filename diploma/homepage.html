@@ -14,54 +14,243 @@
 
 
 	<header class="set_bar">
-		<a  class="settings" onclick="Show_settings()"><img src="img/menu.svg" alt=""></a>
+		<a  class="settings" onclick="ShowSettings()"><img src="img/menu.svg" alt=""></a>
 		<label onClick="logout()" class="exit">exit</label>
 		<a  class="exit">  <img src="img/logout.svg" alt=""></a>
 	</header>
 
-
-
-	<section class="nav_bar">
-		<ul>
-			<li class="nav_bar_item"><p >Відділення
-			 Повітряний транспорт</p>
-				<ul>
-                    <li class ="nav_bar_sub"><p>Пункт1</p></li>
-                    <li class ="nav_bar_sub"><p>Пункт2</p></li>
-                    <li class ="nav_bar_sub"><p>Пункт3</p></li>
-                    <li class ="nav_bar_sub"><p>Пункт4</p></li>
-                  </ul>
-			</li>
-			<li class="nav_bar_item"><p >Відділення 
-			Авіаційна електроніка</p></li>
-			<li class="nav_bar_item"><p >Відділення 
-			Компютерна 
-		та Програмна інженерія</p></li>
-			<li class="nav_bar_item"><p >Відділення 
-			Загалноосвітня підготовка</p></li>
-			<li class="nav_bar_item"><p >Відділення 
-			Повітрянній транспорт 
-		та Копютерні технології</p></li>
-		</ul>
-	</section>
-
+<section class="search">
+	<input type="text" id = "search_field" placeholder="FIO">
+</section>
 	
-	<section class="content"></section>
-		<form action="homepage.php" class="search" method="post">
-			<input type="text" name="search" >
+<section class="content"></section>
+		
 
 <div class="vertical-menu" id="vertical-menu" ></div>
 
 
-		</form>
+		
 		
 		<div id="shadow"></div>
-	<div id="opened" class="view_data" >
+
+
+	<div class="setting hidden"  >
+
+		<div class="joinme" >
 		
-	</div>
-	<div id="settings" >
 		
+		 <div class="multiselect">
+	
+		 	<div class="warper">
+		 	<label for="Branch">Отделения</label><br>
+  			<div class="selectBox" onclick="showCheckboxes()">
+   				<select>
+    				<option>Отделения</option>
+  				</select>
+   			<div class="overSelect"></div>
+ 			</div>
+ 			<div id="Branch">
+  
+  			</div>
+  		</div>
+  	
+  			
+
+			
+
+
+  	</div>
+  	
+ 
+ 	<br>
+ 	<div class="multiselect">
+ 		<div class="warper">
+  	
+  			<label for="cycleCommission">Цикловые комисии</label><br>
+  			<div class="selectBox" onclick="showCycle()">
+   				<select>
+    				<option>Цикловые комисии</option>
+  				</select>
+   			<div class="overSelect"></div>
+ 			</div>
+ 			<div id="cycleCommission">
+  
+  			</div>
+  		</div>	
+ 	</div>
+<br>
+  	<div class="multiselect">
+  		 	<div>
+				<label for="position">Должность</label><br>
+				<input id="position" type="text">
+			</div>
+  	</div>
+ 	
+ 	<br>	
+	
+<div class="multiselect" >
+	<div>
+	<label for="rate">Ставка</label><br>	
+	<input type="text" id="rate" placeholder="Ставка"><br>
+
+			<input type="radio" name="rate" value = "off" >больше<br>
+			<input type="radio" name="rate" value = "off" >меньше<br>
 	</div>
+		<br>
+	<div>
+		<label for="orderNum">Статус </label><br>
+		<select id="jobStatus" name="jobStatus" width="100%">
+			<option value="Основне місце роботи">Основне місце роботи</option>
+			<option value="Суміщення">суміщення</option>
+			<option value="Сумісництво">сумісництво</option>
+		</select>
+	</div>
+
+	
+</div>
+		
+<br>
+<div class="multiselect">
+	<div>
+		<label for="commonExp">Общий Стаж</label><br>
+
+		<input id="experienceInfo.commonExp" type="text"  placeholder="Общий Стаж"><br>
+			<input type="radio" name="experienceInfo.commonExp" value = "off">больше<br>
+			<input type="radio" name="experienceInfo.commonExp" value = "off">меньше<br>
+	</div>
+	<div>
+		<label for="experienceInfo.lectExp">Стаж пед.работы</label><br>
+		<input id ="experienceInfo.lectExp"  type="text"  placeholder="Стаж пед.работы"><br>
+			<input type="radio" name="experienceInfo.lectExp" value = "off">больше<br>
+			<input type="radio" name="experienceInfo.lectExp" value = "off">меньше<br>
+	</div>
+	<div>
+		<label for="experienceInfo.scienceLectExp">Стаж пед.науч.работы</label><br>
+		<input id="experienceInfo.scienceLectExp" type="text"  placeholder="Стаж пед.науч.работы"><br>
+			<input type="radio" name="experienceInfo.scienceLectExp" value = "off">больше<br>
+			<input type="radio" name="experienceInfo.scienceLectExp" value = "off">меньше<br>
+	</div>
+
+</div>
+<br>
+<div class="multiselect">
+	<div>
+		<label for="scienceExp">Стаж науч.работы</label><br>
+		<input id="experienceInfo.scienceExp" type="text"  placeholder="Стаж науч.работы"><br>
+			<input type="radio" name="experienceInfo.scienceExp" value = "off">больше<br>
+			<input type="radio" name="experienceInfo.scienceExp" value = "off">меньше<br>
+	</div>
+	<div>
+		<label for ="birthday">Дата Рождения</label><br>
+		<input id="lecturerCard.birthday.day" type="text"  placeholder="день" >
+		<input id="lecturerCard.birthday.month" type="text"  placeholder="месяц">
+		<input id="lecturerCard.birthday.year" type="text"  placeholder="год"><br>
+		
+			<input type="radio" name="lecturerCard.birthday" value = "off">больше<br>
+			<input type="radio" name="lecturerCard.birthday" value = "off">меньше<br>
+	</div>
+	<div style="width: 205px;">
+		<label for="LecturerCard.sex">Пол</label><br>
+
+			<input type="checkbox" name="lecturerCard.sex" value = "off">Мужской<br>
+			<input type="checkbox" name="lecturerCard.sex" value = "off">Женский<br>
+	</div>
+</div>
+<br>
+<div class="multiselect">
+	<div>
+				<label for="grade">Диплом</label><br>
+					<input  type="checkbox" value="Бакалавр" name="lecturerCard.educationDocuments$array1:grade" >Бакалавр<br>
+					<input type="checkbox" value="Специалист" name="lecturerCard.educationDocuments$array1:grade" >Специалист<br>
+					<input type="checkbox" value="Магистр" name="lecturerCard.educationDocuments$array1:grade" >Магистр<br>
+	</div>
+	<div>
+					<label for="lecturerCard.educationDocuments.endYear">Год Окончания</label><br>	
+					<input id="lecturerCard.educationDocuments$array1:endYear" type="text"  placeholder="год окончания"><br>
+					<input type="radio" name="lecturerCard.educationDocuments$array1:endYear" value = "off" >больше<br>
+					<input type="radio" name="lecturerCard.educationDocuments$array1:endYear" value = "off" >меньше<br>	
+
+	</div>
+
+			
+</div>
+<br>
+
+
+<div class="multiselect">
+				
+	<div style="width: 105px;">
+			<label for="specialtyCode">Шифр Специальности</label><br>
+			<input id="lecturerCard.educationDocuments$array1:specialtyCode" type="text"  placeholder="Шифр"><br>
+	</div>
+	<div style="width: 405px;">
+			<label for="specialtyTitle">Название Специальности</label><br>
+			<input id="lecturerCard.educationDocuments$array1:specialtyTitle" style="width: 279px;"  type="text"  placeholder="Название Специальности"><br>
+	</div>
+
+</div>
+
+			
+	<h4>Повышение Квалификации</h4>
+	<div class="multiselect">
+		
+		<div>
+		
+			<label for="duration">Длительность</label><br>
+			<input id="lecturerCard.advancedTrainings$array1:duration" style="width: 279px;"  type="text"  placeholder="Длительность"><br>
+			<label for="lecturerCard.advancedTrainings$array1:docType">Вид документа</label><br>
+			<input id="lecturerCard.advancedTrainings$array1:docType" style="width: 250px;"  type="text"  placeholder="Вид документа"><br>
+
+		</div>
+
+		<div>
+		
+		<label for ="Lecturer.lecturerCard.advancedTrainings$array1:issueDate">Дата Выдачи</label><br>
+		<input style="width: 60px;" id="lecturerCard.advancedTrainings$array1:issueDate.day" type="text"  placeholder="день">
+		<input style="width: 60px;" id="lecturerCard.advancedTrainings$array1:issueDate.month" type="text" placeholder="месяц">
+		<input style="width: 60px;" id="lecturerCard.advancedTrainings$array1:issueDate.year" type="text"  placeholder="год"><br>
+							
+		<input type="radio" name="lecturerCard.advancedTrainings$array1:issueDate" value = "off">больше<br>
+		<input type="radio" name="lecturerCard.advancedTrainings$array1:issueDate" value = "off">меньше<br>
+
+
+		<label for="lecturerCard.qualifyCategory">Кваліфікаційна категорія</label><br>
+		<select name="lecturerCard.qualifyCategory" id="lecturerCard.qualifyCategory">
+			<option value="спеціаліст">спеціаліст</option>
+			<option value="спеціаліст другої категорії">спеціаліст другої категорії</option>
+			<option value="спеціаліст першої категорії">спеціаліст першої категорії</option>
+			<option value="спеціаліст вищої категорії">спеціаліст вищої категорії</option>
+		</select>
+
+
+		</div>
+	</div>
+	
+<div class="multiselect">
+
+	<div>
+		<label for="lecturerCard.scientificTitles">Вчене звання</label><br>
+		<input id="lecturerCard.scientificTitles$array1:title" style="width: 280px;"  type="text"  placeholder="Вчене звання"><br>
+		<label for="scientificSteps">Науковий ступінь</label><br>
+		<input style="width: 280px;" id="lecturerCard.scientificSteps$array1:title"  type="text"  placeholder="Науковий ступінь"><br>
+		<label for="title_v">Назва нагороди</label><br>
+		<input style="width: 280px;" id="lecturerCard.honours$array1:honour" type="text"  placeholder="Назва нагороди"><br>
+	</div>
+
+	
+</div>
+
+<br>
+
+
+	<input type="button" onclick="fethset()" value ="Принять настройки" style=" width: fit-content; position: relative;left:30%;"> 
+	</div>
+</div>
+
+
+
+
+
 
 	
 </body>
